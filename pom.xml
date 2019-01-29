@@ -18,6 +18,8 @@
 
     <modules>
         <module>eureka-server</module>
+        <module>common</module>
+        <module>common-mybatis</module>
     </modules>
 
 
@@ -66,4 +68,5 @@
             </snapshots>
         </repository>
     </repositories>
+
 </project>
