@@ -1,0 +1,38 @@
+package com.newsoft1024.bkmanagementplatform.utils;
+
+import java.util.Collection;
+import java.util.Map;
+
+/**
+ * Author: Doctor
+ * Description:
+ * Date: 2019-2-11 15:29
+ * Modify By:
+ */
+public class ValidateUtil {
+
+    public static boolean isNullpointerAndNullSize(Object obj){
+        boolean flag = true;
+        if(obj == null){
+            return flag;
+        }else if(obj instanceof String){
+            String str = (String)obj;
+            flag = str.trim().isEmpty();
+        }else if(obj instanceof Collection){
+            Collection col = (Collection)obj;
+            flag = col.isEmpty();
+        }else if(obj instanceof Map){
+            Map map = (Map)obj;
+            flag = map.isEmpty();
+        }
+
+        return flag;
+
+    }
+
+    public static void validateAndThrowMessage(Object obj,String mes){
+        if(isNullpointerAndNullSize(obj)){
+            throw new RuntimeException(mes);
+        }
+    }
+}
