@@ -17,9 +17,13 @@
     </parent>
 
     <modules>
-        <module>eureka-server</module>
         <module>common</module>
         <module>common-mybatis</module>
+        <module>eureka-server</module>
+        <module>ua-service</module>
+        <module>user-service</module>
+        <module>book-service</module>
+        <module>console-web</module>
     </modules>
 
 
@@ -50,13 +54,13 @@
         </dependencies>
     </dependencyManagement>
 
-    <!--<dependencies>-->
-        <!--<dependency>-->
-            <!--<groupId>mysql</groupId>-->
-            <!--<artifactId>mysql-connector-java</artifactId>-->
-            <!--<version>8.0.13</version>-->
-        <!--</dependency>-->
-    <!--</dependencies>-->
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.13</version>
+        </dependency>
+    </dependencies>
 
     <repositories>
         <repository>
