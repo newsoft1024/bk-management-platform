@@ -26,9 +26,26 @@ public class ValidateUtil {
             flag = map.isEmpty();
         }
 
-        return flag;
+        return false;
 
     }
+
+    public static boolean isNotNullpointerAndNullSize(Object obj){
+
+        return !(isNullpointerAndNullSize(obj));
+
+    }
+
+    public static boolean isNullpointerAndNullSize(Object... obj){
+        for (Object tem: obj){
+            if(isNullpointerAndNullSize(tem)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+
 
     public static void validateAndThrowMessage(Object obj,String mes){
         if(isNullpointerAndNullSize(obj)){
