@@ -2,10 +2,16 @@ package com.newsoft1024.mybatis.base;
 
 import com.github.pagehelper.PageInfo;
 import com.newsoft1024.mybatis.base.request.PageRequest;
+import tk.mybatis.mapper.entity.Example;
 
 
 import java.util.List;
 
+/**
+ * 基础service接口
+ * @author Doctor
+ * @param <T>  model类
+ */
 public interface IBaseService<T> {
     T getById(Long id);
 
@@ -18,4 +24,6 @@ public interface IBaseService<T> {
     void update(T model);
 
     void delete(T model);
+
+    List<T> selectByExample(T entity);
 }

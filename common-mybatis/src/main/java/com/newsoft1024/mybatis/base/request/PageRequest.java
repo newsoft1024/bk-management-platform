@@ -3,6 +3,10 @@ package com.newsoft1024.mybatis.base.request;
 
 import com.newsoft1024.mybatis.base.OrderType;
 
+/**
+ * 分页信息类
+ * @param <T>
+ */
 public class PageRequest<T> {
     private int page;
     private int pageSize;

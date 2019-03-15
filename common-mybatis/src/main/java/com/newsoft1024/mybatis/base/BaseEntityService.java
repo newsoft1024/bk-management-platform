@@ -66,4 +66,9 @@ public abstract class BaseEntityService<T, QM> implements IBaseEntityService<T, 
     public void delete(T model) {
         getBaseDao().delete(model);
     }
+
+    @Override
+    public List<T> selectByExample(QM entity) {
+        return getBaseDao().selectByExample(entity);
+    }
 }

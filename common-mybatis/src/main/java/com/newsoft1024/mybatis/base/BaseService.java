@@ -8,6 +8,10 @@ import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
+/**
+ * service基类
+ * @param <T>  model类
+ */
 public abstract class BaseService<T> implements IBaseService<T> {
 
     public abstract BaseMapper<T> getBaseDao();
@@ -65,5 +69,10 @@ public abstract class BaseService<T> implements IBaseService<T> {
     @Override
     public void delete(T model) {
         getBaseDao().delete(model);
+    }
+
+    @Override
+    public List<T> selectByExample(T entity) {
+        return getBaseDao().selectByExample(getExample(entity));
     }
 }

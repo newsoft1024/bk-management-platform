@@ -4,6 +4,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+/**
+ * 基础model 抽取id
+ */
 public class BaseModel {
 
     @Id
