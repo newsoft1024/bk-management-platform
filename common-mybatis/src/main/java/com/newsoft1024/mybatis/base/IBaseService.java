@@ -8,7 +8,7 @@ import tk.mybatis.mapper.entity.Example;
 import java.util.List;
 
 /**
- * 基础service接口
+ * 基础service接口，基本定义了某一实体类的增删查改以及分页查询
  * @author Doctor
  * @param <T>  model类
  */

@@ -52,10 +52,9 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
     @Bean
     protected JwtAccessTokenConverter jwtAccessEnhancer() {
         KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(
-                new ClassPathResource("newsoft1024-jwt.jks"), "newsoft1024".toCharArray());
+                new ClassPathResource("bk-management-jwt.jks"), "bk1234".toCharArray());
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("newsoft1024-jwt"));
-//        converter.setAccessTokenConverter(new CustomerAccessTokenConverter());
+        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("bk-management-jwt"));
         return converter;
     }
 
@@ -74,16 +73,6 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
                 .userDetailsService(authUserDetailService)
                 .tokenEnhancer(enhancerChain)
                 .accessTokenConverter(jwtAccessEnhancer());
-
-        /*TokenEnhancerChain tokenEnhancerChain = new TokenEnhancerChain();
-        tokenEnhancerChain.setTokenEnhancers(Arrays.asList(jwtAccessEnhancer(), new CustomTokenEnhancer()));
-        endpoints.tokenEnhancer(tokenEnhancerChain);
-        endpoints.tokenStore(tokenStore())
-                .userDetailsService(authUserDetailService)
-                .tokenEnhancer(tokenEnhancerChain)
-                .accessTokenConverter(jwtAccessEnhancer())
-                .authenticationManager(authenticationManager);*/
-
     }
 
     @Override
